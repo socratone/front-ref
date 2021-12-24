@@ -5,7 +5,7 @@ import { Page } from './Page';
 import * as HeaderStories from './Header.stories';
 
 export default {
-  title: 'Z/Page',
+  title: 'Story/Page',
   component: Page,
 } as ComponentMeta<typeof Page>;
 
