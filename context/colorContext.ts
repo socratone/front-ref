@@ -5,7 +5,7 @@ const ColorContext = createContext({
   sideNavColor: '',
   backgroundColor: '',
   fontColor: '',
-  onToggleDarkMode: () => {},
+  setDarkMode: (checked: boolean) => {},
 });
 
 export default ColorContext;

@@ -1,11 +1,16 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
-import Button from '../../components/Button';
+import DarkModeSwitch from '../../components/DarkModeSwitch';
 import ColorContext from '../../context/colorContext';
 import NavItem from './Item';
 
 const SideNav = () => {
-  const { sideNavColor, onToggleDarkMode } = useContext(ColorContext);
+  const { sideNavColor, backgroundColor, setDarkMode } =
+    useContext(ColorContext);
+
+  const handleChangeDarkMode = (event: any, checked: boolean) => {
+    setDarkMode(checked);
+  };
 
   return (
     <Aside background={sideNavColor}>
@@ -15,7 +20,10 @@ const SideNav = () => {
           <NavItem href="/library/moment">Moment</NavItem>
         </Items>
         <DarkModeContainer>
-          <Button onClick={onToggleDarkMode}>Dark Mode</Button>
+          <DarkModeSwitch
+            checked={backgroundColor === '#fff' ? false : true}
+            onChange={handleChangeDarkMode}
+          />
         </DarkModeContainer>
       </Nav>
     </Aside>

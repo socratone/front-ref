@@ -4,36 +4,30 @@ import ColorContext from '../context/colorContext';
 import { useState } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [colors, setColors] = useState({
-    primaryColor: 'yellow',
-    sideNavColor: 'yellow',
-    backgroundColor: '#fff',
-    fontColor: '#000',
-  });
+  const [darkMode, setDarkMode] = useState(false);
 
-  const handleToggleDarkMode = () => {
-    if (colors.backgroundColor === '#fff') {
-      setColors({
+  const colors = () => {
+    if (darkMode) {
+      return {
         primaryColor: 'dodgerblue',
         sideNavColor: 'gold',
         backgroundColor: '#000',
         fontColor: '#fff',
-      });
-    } else {
-      setColors({
-        primaryColor: 'dodgerblue',
-        sideNavColor: 'lightskyblue',
-        backgroundColor: '#fff',
-        fontColor: '#000',
-      });
+      };
     }
+    return {
+      primaryColor: 'dodgerblue',
+      sideNavColor: 'lightskyblue',
+      backgroundColor: '#fff',
+      fontColor: '#000',
+    };
   };
 
   return (
     <ColorContext.Provider
       value={{
-        ...colors,
-        onToggleDarkMode: handleToggleDarkMode,
+        ...colors(),
+        setDarkMode: setDarkMode,
       }}
     >
       <Component {...pageProps} />
