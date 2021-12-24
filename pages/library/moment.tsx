@@ -11,6 +11,7 @@ const MomentPage = () => {
       <SideNav />
       <Main>
         <PageTitle marginBottom={10}>Moment</PageTitle>
+        <div>• moment 사용 방법</div>
         <Code style={{ marginBottom: '10px' }}>
           {"moment().format('YYYY년 MMMM Do a h시 mm분 ss초');"}
         </Code>
