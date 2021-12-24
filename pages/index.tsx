@@ -1,21 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useContext } from 'react';
-import Button from '../components/Button';
 import PageText from '../components/PageText';
 import PageTitle from '../components/PageTitle';
-import ColorContext from '../context/colorContext';
 import Frame from '../layout/Frame';
 import Main from '../layout/Main';
 import SideNav from '../layout/SideNav';
 
 const Home: NextPage = () => {
-  const { fontColor } = useContext(ColorContext);
-
   return (
     <Frame>
       <Head>
-        <title>Front Ref</title>
+        <title>Front Reference</title>
         <meta name="description" content="Frontend 개발을 위한 참고 문서" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
