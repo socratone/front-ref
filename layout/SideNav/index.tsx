@@ -23,6 +23,10 @@ const Aside = styled.aside`
 
 const Nav = styled.nav``;
 
-const Items = styled.ul``;
+const Items = styled.ul`
+  > * {
+    margin-bottom: 5px;
+  }
+`;
 
 export default SideNav;

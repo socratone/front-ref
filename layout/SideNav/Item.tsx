@@ -16,6 +16,10 @@ const NavItem = ({ href, children }: NavItemProps) => {
 
 const Container = styled.li`
   list-style: none;
+
+  a:hover {
+    font-weight: 600;
+  }
 `;
 
 export default NavItem;
