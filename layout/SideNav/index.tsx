@@ -32,7 +32,7 @@ const SideNav = () => {
 
 const Aside = styled.aside<{ background: string }>`
   background: ${(props) => props.background};
-  width: 200px;
+  width: 240px;
   height: 100%;
   padding: 20px;
   flex-shrink: 0;

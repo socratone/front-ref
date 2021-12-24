@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useContext } from 'react';
 import Button from '../components/Button';
+import PageText from '../components/PageText';
+import PageTitle from '../components/PageTitle';
 import ColorContext from '../context/colorContext';
 import Frame from '../layout/Frame';
 import Main from '../layout/Main';
@@ -21,12 +23,17 @@ const Home: NextPage = () => {
       <SideNav />
 
       <Main>
-        <div style={{ color: fontColor }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aut,
-          assumenda doloribus optio, voluptatibus corrupti ea voluptate
-          repellendus, ducimus nisi accusamus? Est dignissimos illum explicabo
-          libero quaerat asperiores dolor dicta?
-        </div>
+        <PageTitle marginBottom={10}>Front Reference</PageTitle>
+        <PageText marginBottom={10}>
+          반갑습니다! 🎉
+          <br /> Front Reference는 <br />
+          Front-end 개발 중에 필요한 정보와 예제 코드 등을 <br />
+          쉽게 찾기 위한 목적으로 만든 웹페이지 입니다.
+        </PageText>
+        <PageText>
+          도움이 되시길 바라고
+          <br /> 보다 좋은 아이디어가 있으면 댓글 남겨주세요 🙃
+        </PageText>
       </Main>
     </Frame>
   );
