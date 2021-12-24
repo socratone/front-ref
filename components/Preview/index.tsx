@@ -1,11 +1,15 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import ColorContext from '../../context/colorContext';
 
 type PreviewProps = {
   children: string;
 };
 
 const Preview = ({ children }: PreviewProps) => {
-  return <Container>{children}</Container>;
+  const { fontColor } = useContext(ColorContext);
+
+  return <Container style={{ color: fontColor }}>{children}</Container>;
 };
 
 const Container = styled.article`

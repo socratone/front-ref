@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { useContext } from 'react';
+import ColorContext from '../../context/colorContext';
 
 type NavItemProps = {
   href: string;
@@ -7,8 +9,10 @@ type NavItemProps = {
 };
 
 const NavItem = ({ href, children }: NavItemProps) => {
+  const { fontColor } = useContext(ColorContext);
+
   return (
-    <Container>
+    <Container style={{ color: fontColor }}>
       <Link href={href}>{children}</Link>
     </Container>
   );
