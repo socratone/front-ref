@@ -1,15 +1,21 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import ColorContext from '../../context/colorContext';
 
 type MainProps = {
   children: React.ReactNode;
 };
 
 const Main = ({ children }: MainProps) => {
-  return <Container>{children}</Container>;
+  const { backgroundColor } = useContext(ColorContext);
+
+  return <Container background={backgroundColor}>{children}</Container>;
 };
 
-const Container = styled.main`
+const Container = styled.main<{ background: string }>`
+  background: ${(props) => props.background};
   padding: 20px;
+  flex-grow: 1;
 `;
 
 export default Main;
