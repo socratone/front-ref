@@ -29,7 +29,6 @@ const TopNav = ({ items }: TopNavProps) => {
 
   return (
     <Header background={sideNavColor}>
-      <div />
       <IconButton onClick={handleClickMenuButton}>
         <MenuIcon />
       </IconButton>
@@ -66,7 +65,6 @@ const Header = styled.header<{ background: string }>`
 
   @media (max-width: 800px) {
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
 `;
