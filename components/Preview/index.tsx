@@ -7,15 +7,24 @@ type PreviewProps = {
 };
 
 const Preview = ({ children }: PreviewProps) => {
-  const { fontColor } = useContext(ColorContext);
+  const { fontColor, backgroundColor } = useContext(ColorContext);
+  const darkMode = backgroundColor !== '#fff';
 
-  return <Container style={{ color: fontColor }}>{children}</Container>;
+  return (
+    <Container
+      fontColor={fontColor}
+      borderColor={darkMode ? '#3a3a3a' : 'gainsboro'}
+    >
+      {children}
+    </Container>
+  );
 };
 
-const Container = styled.article`
+const Container = styled.article<{ fontColor: string; borderColor: string }>`
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid gainsboro;
+  border: 1px solid ${(props) => props.borderColor};
+  color: ${(props) => props.fontColor};
 `;
 
 export default Preview;

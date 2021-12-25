@@ -10,12 +10,13 @@ type IconButtonProps = {
 
 const IconButton = ({ children, onClick, diameter = 30 }: IconButtonProps) => {
   const { backgroundColor, fontColor } = useContext(ColorContext);
+  const darkMode = backgroundColor !== '#fff';
 
   return (
     <Container
       onClick={onClick}
       diameter={diameter}
-      darkMode={backgroundColor !== '#fff'}
+      darkMode={darkMode}
       iconColor={fontColor}
     >
       {children}

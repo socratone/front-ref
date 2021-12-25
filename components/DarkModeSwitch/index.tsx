@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
+import Switch, { SwitchProps } from '@mui/material/Switch';
+import { useContext } from 'react';
+import ColorContext from '../../context/colorContext';
 
 type DarkModeSwitchProps = {
   checked: boolean;
@@ -11,17 +12,27 @@ type DarkModeSwitchProps = {
 };
 
 const DarkModeSwitch = ({ checked, onChange }: DarkModeSwitchProps) => {
+  const { backgroundColor } = useContext(ColorContext);
+  const darkMode = backgroundColor !== '#fff';
+
   return (
-    <MaterialUISwitch checked={checked} onChange={onChange} disableRipple />
+    <MaterialUISwitch
+      checked={checked}
+      onChange={onChange}
+      disableRipple
+      trackColor={darkMode ? '#5c5c5c' : '#cbd2da'}
+      thumbColor={darkMode ? '#003892' : '#001e3c'}
+    />
   );
 };
 
-const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+const MaterialUISwitch = styled(Switch)<
+  SwitchProps & { trackColor: string; thumbColor: string }
+>(({ trackColor, thumbColor }) => ({
   width: 48,
   height: 34,
   padding: '7px 0',
   '& .MuiSwitch-switchBase': {
-    // margin: 1,
     padding: 0,
     transform: 'translateX(0px)',
     '&.Mui-checked': {
@@ -34,12 +45,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       },
       '& + .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#cbd2da',
+        backgroundColor: trackColor,
       },
     },
   },
   '& .MuiSwitch-thumb': {
-    backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#001e3c',
+    backgroundColor: thumbColor,
     width: 32,
     height: 32,
     '&:before': {
@@ -58,7 +69,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
   '& .MuiSwitch-track': {
     opacity: 1,
-    backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#cbd2da',
+    backgroundColor: trackColor,
     borderRadius: 20 / 2,
   },
 }));
