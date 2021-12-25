@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import ColorContext from '../../context/colorContext';
 
 type IconButtonProps = {
   children: React.ReactElement;
@@ -7,19 +9,30 @@ type IconButtonProps = {
 };
 
 const IconButton = ({ children, onClick, diameter = 30 }: IconButtonProps) => {
+  const { backgroundColor, fontColor } = useContext(ColorContext);
+
   return (
-    <Container onClick={onClick} diameter={diameter}>
+    <Container
+      onClick={onClick}
+      diameter={diameter}
+      darkMode={backgroundColor !== '#fff'}
+      iconColor={fontColor}
+    >
       {children}
     </Container>
   );
 };
 
-const Container = styled.button<{ diameter: number }>`
+const Container = styled.button<{
+  diameter: number;
+  darkMode: boolean;
+  iconColor: string;
+}>`
   width: ${(props) => props.diameter + 'px'};
   height: ${(props) => props.diameter + 'px'};
   border-radius: 50%;
   cursor: pointer;
-  background: white;
+  background: transparent;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -27,16 +40,17 @@ const Container = styled.button<{ diameter: number }>`
   border: 0;
 
   :hover {
-    background: whitesmoke;
+    background: ${(props) => (props.darkMode ? '#ffffff11' : '#00000011')};
   }
 
   :active {
-    background: gainsboro;
+    background: ${(props) => (props.darkMode ? '#ffffff22' : '#00000022')};
   }
 
   svg {
     width: 50%;
     height: 50%;
+    fill: ${(props) => props.iconColor};
   }
 `;
 
