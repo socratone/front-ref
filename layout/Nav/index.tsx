@@ -1,11 +1,22 @@
 import SideNav from './SideNav';
 import TopNav from './TopNav';
 
+const items = [
+  {
+    href: '/',
+    name: 'Home',
+  },
+  {
+    href: '/library/moment',
+    name: 'Moment',
+  },
+];
+
 const Nav = () => {
   return (
     <>
-      <SideNav />
-      <TopNav />
+      <SideNav items={items} />
+      <TopNav items={items} />
     </>
   );
 };

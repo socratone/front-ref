@@ -4,7 +4,14 @@ import DarkModeSwitch from '../../../components/DarkModeSwitch';
 import ColorContext from '../../../context/colorContext';
 import NavItem from './Item';
 
-const SideNav = () => {
+type SideNavProps = {
+  items: {
+    name: string;
+    href: string;
+  }[];
+};
+
+const SideNav = ({ items }: SideNavProps) => {
   const { sideNavColor, backgroundColor, setDarkMode } =
     useContext(ColorContext);
 
@@ -16,8 +23,11 @@ const SideNav = () => {
     <Aside background={sideNavColor}>
       <Nav>
         <Items>
-          <NavItem href="/">Home</NavItem>
-          <NavItem href="/library/moment">Moment</NavItem>
+          {items.map((item) => (
+            <NavItem key={item.href} href={item.href}>
+              {item.name}
+            </NavItem>
+          ))}
         </Items>
         <DarkModeContainer>
           <DarkModeSwitch

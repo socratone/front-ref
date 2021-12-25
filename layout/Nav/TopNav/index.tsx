@@ -6,7 +6,14 @@ import NavItem from '../SideNav/Item';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '../../../components/IconButton';
 
-const TopNav = () => {
+type TopNavProps = {
+  items: {
+    name: string;
+    href: string;
+  }[];
+};
+
+const TopNav = ({ items }: TopNavProps) => {
   const { sideNavColor, backgroundColor, setDarkMode } =
     useContext(ColorContext);
 
@@ -31,8 +38,11 @@ const TopNav = () => {
         <Dropdown background={sideNavColor}>
           <Nav>
             <Items>
-              <NavItem href="/">Home</NavItem>
-              <NavItem href="/library/moment">Moment</NavItem>
+              {items.map((item) => (
+                <NavItem key={item.href} href={item.href}>
+                  {item.name}
+                </NavItem>
+              ))}
             </Items>
             <DarkModeContainer>
               <DarkModeSwitch
