@@ -3,12 +3,13 @@ import PageTitle from '../../components/PageTitle';
 import Preview from '../../components/Preview';
 import Frame from '../../layout/Frame';
 import Main from '../../layout/Main';
-import SideNav from '../../layout/SideNav';
+import Nav from '../../layout/Nav';
 
 const MomentPage = () => {
   return (
     <Frame>
-      <SideNav />
+      <Nav />
+
       <Main>
         <PageTitle marginBottom={10}>Moment</PageTitle>
         <Code style={{ marginBottom: '10px' }}>

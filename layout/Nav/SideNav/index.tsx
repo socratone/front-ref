@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
-import DarkModeSwitch from '../../components/DarkModeSwitch';
-import ColorContext from '../../context/colorContext';
+import DarkModeSwitch from '../../../components/DarkModeSwitch';
+import ColorContext from '../../../context/colorContext';
 import NavItem from './Item';
 
 const SideNav = () => {
@@ -32,10 +32,12 @@ const SideNav = () => {
 
 const Aside = styled.aside<{ background: string }>`
   background: ${(props) => props.background};
-  width: 240px;
   height: 100%;
   padding: 20px;
-  flex-shrink: 0;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const Nav = styled.nav`

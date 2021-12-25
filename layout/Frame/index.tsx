@@ -9,9 +9,14 @@ const Frame = ({ children }: FrameProps) => {
 };
 
 const Container = styled.div`
-  display: flex;
   width: 100vw;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+
+  @media (max-width: 800px) {
+    display: block;
+  }
 `;
 
 export default Frame;

@@ -4,7 +4,7 @@ import PageText from '../components/PageText';
 import PageTitle from '../components/PageTitle';
 import Frame from '../layout/Frame';
 import Main from '../layout/Main';
-import SideNav from '../layout/SideNav';
+import Nav from '../layout/Nav';
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <SideNav />
+      <Nav />
 
       <Main>
         <PageTitle marginBottom={10}>Front Reference</PageTitle>
