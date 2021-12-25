@@ -11,14 +11,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     if (darkMode) {
       return {
         primaryColor: 'dodgerblue',
-        sideNavColor: '#1f1f1f',
+        navColor: '#1f1f1f',
         backgroundColor: '#121212',
         fontColor: '#f3f3f3',
       };
     }
     return {
       primaryColor: 'dodgerblue',
-      sideNavColor: '#F9F9FB',
+      navColor: '#F9F9FB',
       backgroundColor: '#fff',
       fontColor: '#595C5E',
     };

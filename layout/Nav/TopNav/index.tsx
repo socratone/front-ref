@@ -14,8 +14,7 @@ type TopNavProps = {
 };
 
 const TopNav = ({ items }: TopNavProps) => {
-  const { sideNavColor, backgroundColor, setDarkMode } =
-    useContext(ColorContext);
+  const { navColor, backgroundColor, setDarkMode } = useContext(ColorContext);
 
   const [open, setOpen] = useState(false);
 
@@ -28,13 +27,13 @@ const TopNav = ({ items }: TopNavProps) => {
   };
 
   return (
-    <Header background={sideNavColor}>
+    <Header background={navColor}>
       <IconButton onClick={handleClickMenuButton}>
         <MenuIcon />
       </IconButton>
 
       {open && (
-        <Dropdown background={sideNavColor}>
+        <Dropdown background={navColor}>
           <Nav>
             <Items>
               {items.map((item) => (

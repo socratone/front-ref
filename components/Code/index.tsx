@@ -19,7 +19,7 @@ const Container = styled.article`
   border-radius: 5px;
 
   code {
-    color: white;
+    color: #f0f0f0;
   }
 `;
 

@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 const ColorContext = createContext({
   primaryColor: '',
-  sideNavColor: '',
+  navColor: '',
   backgroundColor: '',
   fontColor: '',
   setDarkMode: (checked: boolean) => {},

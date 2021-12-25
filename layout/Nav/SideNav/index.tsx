@@ -12,15 +12,14 @@ type SideNavProps = {
 };
 
 const SideNav = ({ items }: SideNavProps) => {
-  const { sideNavColor, backgroundColor, setDarkMode } =
-    useContext(ColorContext);
+  const { navColor, backgroundColor, setDarkMode } = useContext(ColorContext);
 
   const handleChangeDarkMode = (event: any, checked: boolean) => {
     setDarkMode(checked);
   };
 
   return (
-    <Aside background={sideNavColor}>
+    <Aside background={navColor}>
       <Nav>
         <Items>
           {items.map((item) => (
