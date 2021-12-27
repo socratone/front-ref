@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           반갑습니다! 🎉
           <br /> Front Reference는 <br />
           Front-end 개발 중에 필요한 정보와 예제 코드 등을 <br />
-          쉽게 찾기 위한 목적으로 만든 웹페이지 입니다.
+          쉽게 찾기 위한 목적으로 만든 웹페이지입니다.
         </PageText>
         <PageText>
           도움이 되시길 바라고
