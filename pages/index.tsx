@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import PageText from '../components/PageText';
-import PageTitle from '../components/PageTitle';
+import Title from '../components/Title';
 import Frame from '../layout/Frame';
 import Main from '../layout/Main';
 import Nav from '../layout/Nav';
@@ -18,8 +18,8 @@ const Home: NextPage = () => {
       <Nav />
 
       <Main>
-        <PageTitle marginBottom={10}>Front Reference</PageTitle>
-        <PageText marginBottom={10}>
+        <Title mb={10}>Front Reference</Title>
+        <PageText mb={10}>
           반갑습니다! 🎉
           <br /> Front Reference는 <br />
           Front-end 개발 중에 필요한 정보와 예제 코드 등을 <br />
