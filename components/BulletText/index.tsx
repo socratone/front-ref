@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import ColorContext from '../../context/colorContext';
+import CircleIcon from './circle.svg';
 
 type BulletTextProps = {
   indent?: number;
@@ -13,7 +14,9 @@ const BulletText = ({ indent = 0, mb, children }: BulletTextProps) => {
 
   return (
     <Container fontColor={fontColor} mb={mb}>
-      <Dot marginLeft={indent * 18}>•</Dot>
+      <Dot marginLeft={indent * 18}>
+        <CircleIcon />
+      </Dot>
       <Text>{children}</Text>
     </Container>
   );
@@ -30,6 +33,7 @@ const Dot = styled.div<{ marginLeft: number }>`
   width: 18px;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-shrink: 0;
 `;
 
