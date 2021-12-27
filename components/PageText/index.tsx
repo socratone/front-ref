@@ -3,17 +3,17 @@ import styled from 'styled-components';
 import ColorContext from '../../context/colorContext';
 
 type PageTextProps = {
-  marginBottom?: number;
+  mb?: number;
   children: React.ReactNode;
 };
 
-const PageText = ({ marginBottom, children }: PageTextProps) => {
+const PageText = ({ mb, children }: PageTextProps) => {
   const { fontColor } = useContext(ColorContext);
 
   return (
     <Container
       style={{
-        marginBottom: marginBottom ? marginBottom + 'px' : undefined,
+        marginBottom: mb ? mb + 'px' : undefined,
         color: fontColor,
       }}
     >

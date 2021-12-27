@@ -4,23 +4,25 @@ import ColorContext from '../../context/colorContext';
 
 type BulletTextProps = {
   indent?: number;
+  mb?: number;
   children: string;
 };
 
-const BulletText = ({ indent = 0, children }: BulletTextProps) => {
+const BulletText = ({ indent = 0, mb, children }: BulletTextProps) => {
   const { fontColor } = useContext(ColorContext);
 
   return (
-    <Container fontColor={fontColor}>
+    <Container fontColor={fontColor} mb={mb}>
       <Dot marginLeft={indent * 18}>•</Dot>
       <Text>{children}</Text>
     </Container>
   );
 };
 
-const Container = styled.div<{ fontColor: string }>`
+const Container = styled.div<{ fontColor: string; mb?: number }>`
   display: flex;
   color: ${(props) => props.fontColor};
+  margin-bottom: ${(props) => (props.mb ? props.mb + 'px' : undefined)};
 `;
 
 const Dot = styled.div<{ marginLeft: number }>`
