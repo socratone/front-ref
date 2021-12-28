@@ -21,6 +21,8 @@ const Preview = ({ children }: PreviewProps) => {
 };
 
 const Container = styled.article<{ fontColor: string; borderColor: string }>`
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid ${(props) => props.borderColor};
