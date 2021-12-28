@@ -22,6 +22,8 @@ const Title = ({ mb, children }: TitleProps) => {
   );
 };
 
-const Container = styled.h1``;
+const Container = styled.h1`
+  margin-bottom: 10px;
+`;
 
 export default Title;
