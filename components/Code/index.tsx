@@ -21,15 +21,13 @@ const Code = ({ mb, children }: CodeProps) => {
       <code>
         <pre>{children}</pre>
       </code>
-      <IconEventArea>
-        <IconContainer
-          onClick={handleCopy}
-          fontColor={fontColor}
-          background={navColor}
-        >
-          <ContentCopyIcon fontSize="small" />
-        </IconContainer>
-      </IconEventArea>
+      <IconContainer
+        onClick={handleCopy}
+        fontColor={fontColor}
+        background={navColor}
+      >
+        <ContentCopyIcon fontSize="small" />
+      </IconContainer>
     </Container>
   );
 };
@@ -48,6 +46,12 @@ const Container = styled.article<{
   margin-bottom: ${(props) => (props.mb ? props.mb + 'px' : undefined)};
   overflow: hidden;
 
+  :hover {
+    div {
+      transform: translateX(0);
+    }
+  }
+
   pre {
     color: ${(props) => props.fontColor};
     white-space: pre-wrap;
@@ -55,22 +59,10 @@ const Container = styled.article<{
   }
 `;
 
-const IconEventArea = styled.div`
+const IconContainer = styled.div<{ fontColor: string; background: string }>`
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;
-  display: flex;
-
-  :hover {
-    div {
-      transform: translateX(0);
-    }
-  }
-`;
-
-const IconContainer = styled.div<{ fontColor: string; background: string }>`
-  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
