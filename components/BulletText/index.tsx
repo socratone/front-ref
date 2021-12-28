@@ -15,7 +15,7 @@ const BulletText = ({ indent = 0, mb, children }: BulletTextProps) => {
   return (
     <Container fontColor={fontColor} mb={mb}>
       <Dot marginLeft={indent * 18}>
-        <CircleIcon />
+        <CircleIcon fill={fontColor} />
       </Dot>
       <Text>{children}</Text>
     </Container>
