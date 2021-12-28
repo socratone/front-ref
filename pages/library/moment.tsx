@@ -9,6 +9,7 @@ import Nav from '../../layout/Nav';
 import BulletText from '../../components/BulletText';
 import SubTitle from '../../components/SubTitle';
 import Text from '../../components/Text';
+import TitleHeader from '../../components/TitleHeader';
 
 const MomentPage = () => {
   return (
@@ -16,7 +17,7 @@ const MomentPage = () => {
       <Nav />
 
       <Main>
-        <Title>Moment</Title>
+        <TitleHeader title="Moment" url="https://momentjs.com/" />
 
         <SubTitle>사용 목적 🎯</SubTitle>
 
@@ -27,7 +28,7 @@ const MomentPage = () => {
           이런 때에 moment를 이용하면 날짜 데이터를 손쉽게 다룰 수 있습니다.
         </Text>
 
-        <SubTitle>설치</SubTitle>
+        <SubTitle>설치 ⚙️</SubTitle>
 
         <Text>node 프로젝트의 터미널에서 다음을 입력합니다.</Text>
 
@@ -39,17 +40,44 @@ const MomentPage = () => {
 
         <Code>{`import 'moment/locale/ko';`}</Code>
 
-        <SubTitle>인풋과 아웃풋</SubTitle>
+        <SubTitle>값을 넣는 방법</SubTitle>
 
-        {/* 
+        <Text>
+          아래와 같은 방법으로 moment의 첫 번째 인자에 값을 넣어 Moment 객체를
+          만들 수 있습니다.
+        </Text>
+
+        <Code>{`moment('2021-12-25'); // Moment 객체를 return`}</Code>
+
+        <Text>세부 시간도 넣을 수 있습니다.</Text>
+
+        <Code>{`moment('2021-12-25 10:20:30');`}</Code>
+
+        <SubTitle>값을 출력하는 방법</SubTitle>
+
+        <Text>
+          만들어진 Moment 객체의 값을 출력하려면 format 메소드를 씁니다.
+        </Text>
+
         <Code>
-          {`moment('2021-12-25', 'YYYY-MM-DD').format('YYYY년 MMMM Do a h시 mm분 ss초');`}
+          {`const date = moment('2021-12-25 10:20:30');
+date.format('YYYY년 MMMM Do a h시 mm분 ss초'); // 아래 문자를 return
+// 2021년 12월 25일 오전 10시 20분 30초`}
         </Code>
+
+        <Text mb={10}>많이 사용하는 출력 예제들을 적어보겠습니다.</Text>
+
+        <BulletText>날짜</BulletText>
+        <Code>{`moment('2021-12-25').format('YYYY년 MMMM Do');`}</Code>
+        <Preview>{moment('2021-12-25').format('YYYY년 MMMM Do')}</Preview>
+
+        <BulletText>전부</BulletText>
+        <Code>{`moment('2021-12-25 10:20:30').format('YYYY년 MMMM Do a h시 mm분 ss초');`}</Code>
         <Preview>
-          {moment('2021-12-25', 'YYYY-MM-DD').format(
+          {moment('2021-12-25 10:20:30').format(
             'YYYY년 MMMM Do a h시 mm분 ss초'
           )}
-        </Preview> */}
+        </Preview>
       </Main>
     </Frame>
   );
