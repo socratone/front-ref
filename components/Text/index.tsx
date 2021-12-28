@@ -2,12 +2,12 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import ColorContext from '../../context/colorContext';
 
-type PageTextProps = {
+type TextProps = {
   mb?: number;
   children: React.ReactNode;
 };
 
-const PageText = ({ mb, children }: PageTextProps) => {
+const Text = ({ mb, children }: TextProps) => {
   const { fontColor } = useContext(ColorContext);
 
   return (
@@ -26,4 +26,4 @@ const Container = styled.p`
   line-height: 1.5;
 `;
 
-export default PageText;
+export default Text;
