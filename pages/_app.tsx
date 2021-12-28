@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
     return {
       primaryColor: 'dodgerblue',
-      navColor: '#F9F9FB',
+      navColor: '#f4f4f8',
       backgroundColor: '#fff',
       fontColor: '#595C5E',
     };
