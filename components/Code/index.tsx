@@ -18,7 +18,9 @@ const Code = ({ mb, children }: CodeProps) => {
 
   return (
     <Container mb={mb} fontColor={fontColor} background={navColor}>
-      <code>{children}</code>
+      <code>
+        <pre>{children}</pre>
+      </code>
       <IconEventArea>
         <IconContainer
           onClick={handleCopy}
@@ -46,7 +48,7 @@ const Container = styled.article<{
   margin-bottom: ${(props) => (props.mb ? props.mb + 'px' : undefined)};
   overflow: hidden;
 
-  code {
+  pre {
     color: ${(props) => props.fontColor};
   }
 `;
