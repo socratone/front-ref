@@ -15,6 +15,7 @@ const Main = ({ children }: MainProps) => {
 const Container = styled.main<{ background: string }>`
   background: ${(props) => props.background};
   padding: 20px;
+  overflow-y: auto;
 
   @media (max-width: 800px) {
     height: 100%;
