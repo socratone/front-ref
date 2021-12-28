@@ -13,7 +13,7 @@ const Title = ({ mb, children }: TitleProps) => {
   return (
     <Container
       style={{
-        marginBottom: mb ? mb + 'px' : undefined,
+        marginBottom: mb !== undefined ? mb + 'px' : undefined,
         color: fontColor,
       }}
     >
