@@ -18,7 +18,7 @@ const Container = styled.main<{ background: string }>`
   overflow-y: auto;
 
   @media (max-width: 800px) {
-    height: 100%;
+    flex-grow: 1;
   }
 `;
 

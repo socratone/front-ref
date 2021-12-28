@@ -15,7 +15,9 @@ const Container = styled.div`
   grid-template-columns: 240px 1fr;
 
   @media (max-width: 800px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: unset;
   }
 `;
 

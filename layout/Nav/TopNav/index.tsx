@@ -60,6 +60,7 @@ const Header = styled.header<{ background: string }>`
   background: ${(props) => props.background};
   height: 40px;
   padding: 0 20px;
+  flex-shrink: 0;
   display: none;
 
   @media (max-width: 800px) {
