@@ -50,6 +50,8 @@ const Container = styled.article<{
 
   pre {
     color: ${(props) => props.fontColor};
+    white-space: pre-wrap;
+    word-break: break-word;
   }
 `;
 
