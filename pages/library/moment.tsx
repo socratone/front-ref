@@ -78,6 +78,14 @@ date.format('YYYY년 MMMM Do a h시 mm분 ss초'); // 아래 문자를 return
             'YYYY년 MMMM Do a h시 mm분 ss초'
           )}
         </Preview>
+
+        <BulletText>12시간제</BulletText>
+        <Code>{`moment('2021-12-25 20:20:30').format('a h시 mm분')`}</Code>
+        <Preview>{moment('2021-12-25 20:20:30').format('a h시 mm분')}</Preview>
+
+        <BulletText>24시간제</BulletText>
+        <Code>{`moment('2021-12-25 20:20:30').format('HH시 mm분')`}</Code>
+        <Preview>{moment('2021-12-25 20:20:30').format('HH시 mm분')}</Preview>
       </Main>
     </Frame>
   );
