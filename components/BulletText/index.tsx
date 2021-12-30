@@ -14,9 +14,11 @@ const BulletText = ({ indent = 0, mb, children }: BulletTextProps) => {
 
   return (
     <Container fontColor={fontColor} mb={mb}>
-      <Dot marginLeft={indent * 18}>
-        <CircleIcon fill={fontColor} />
-      </Dot>
+      <DotArea marginLeft={indent * 18}>
+        <IconContainer>
+          <CircleIcon fill={fontColor} />
+        </IconContainer>
+      </DotArea>
       <Text>{children}</Text>
     </Container>
   );
@@ -28,13 +30,19 @@ const Container = styled.div<{ fontColor: string; mb?: number }>`
   margin-bottom: ${(props) => (props.mb ? props.mb + 'px' : undefined)};
 `;
 
-const Dot = styled.div<{ marginLeft: number }>`
+const DotArea = styled.div<{ marginLeft: number }>`
   margin-left: ${(props) => props.marginLeft + 'px'};
   width: 18px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-shrink: 0;
+`;
+
+const IconContainer = styled.div`
+  height: 24px;
+  display: flex;
+  align-items: center;
 `;
 
 const Text = styled.p``;
