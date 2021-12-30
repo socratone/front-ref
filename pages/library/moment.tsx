@@ -38,7 +38,7 @@ const MomentPage = () => {
           프로젝트의 한 부분에 아래를 넣어야 요일 등이 한글로 바뀝니다.
         </Text>
 
-        <Code>{`import 'moment/locale/ko';`}</Code>
+        <Code language="js">{`import 'moment/locale/ko';`}</Code>
 
         <SubTitle>값을 넣는 방법</SubTitle>
 
@@ -47,11 +47,11 @@ const MomentPage = () => {
           만들 수 있습니다.
         </Text>
 
-        <Code>{`moment('2021-12-25'); // Moment 객체를 return`}</Code>
+        <Code language="js">{`moment('2021-12-25'); // Moment 객체를 return`}</Code>
 
         <Text>세부 시간도 넣을 수 있습니다.</Text>
 
-        <Code>{`moment('2021-12-25 10:20:30');`}</Code>
+        <Code language="js">{`moment('2021-12-25 10:20:30');`}</Code>
 
         <SubTitle>값을 출력하는 방법</SubTitle>
 
@@ -59,7 +59,7 @@ const MomentPage = () => {
           만들어진 Moment 객체의 값을 출력하려면 format 메소드를 씁니다.
         </Text>
 
-        <Code>
+        <Code language="js">
           {`const date = moment('2021-12-25 10:20:30');
 date.format('YYYY년 MMMM Do a h시 mm분 ss초'); // 아래 문자를 return
 // 2021년 12월 25일 오전 10시 20분 30초`}
@@ -68,11 +68,11 @@ date.format('YYYY년 MMMM Do a h시 mm분 ss초'); // 아래 문자를 return
         <Text mb={10}>많이 사용하는 출력 예제들을 적어보겠습니다.</Text>
 
         <BulletText>날짜</BulletText>
-        <Code>{`moment('2021-12-25').format('YYYY년 MMMM Do');`}</Code>
+        <Code language="js">{`moment('2021-12-25').format('YYYY년 MMMM Do');`}</Code>
         <Preview>{moment('2021-12-25').format('YYYY년 MMMM Do')}</Preview>
 
         <BulletText>전부</BulletText>
-        <Code>{`moment('2021-12-25 10:20:30').format('YYYY년 MMMM Do a h시 mm분 ss초');`}</Code>
+        <Code language="js">{`moment('2021-12-25 10:20:30').format('YYYY년 MMMM Do a h시 mm분 ss초');`}</Code>
         <Preview>
           {moment('2021-12-25 10:20:30').format(
             'YYYY년 MMMM Do a h시 mm분 ss초'
@@ -80,11 +80,11 @@ date.format('YYYY년 MMMM Do a h시 mm분 ss초'); // 아래 문자를 return
         </Preview>
 
         <BulletText>12시간제</BulletText>
-        <Code>{`moment('2021-12-25 20:20:30').format('a h시 mm분')`}</Code>
+        <Code language="js">{`moment('2021-12-25 20:20:30').format('a h시 mm분');`}</Code>
         <Preview>{moment('2021-12-25 20:20:30').format('a h시 mm분')}</Preview>
 
         <BulletText>24시간제</BulletText>
-        <Code>{`moment('2021-12-25 20:20:30').format('HH시 mm분')`}</Code>
+        <Code language="js">{`moment('2021-12-25 20:20:30').format('HH시 mm분');`}</Code>
         <Preview>{moment('2021-12-25 20:20:30').format('HH시 mm분')}</Preview>
       </Main>
     </Frame>

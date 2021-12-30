@@ -3,23 +3,39 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import copyClipboard from './copyClipboard';
 import { useContext } from 'react';
 import ColorContext from '../../context/colorContext';
+import applyJavascriptCodeColor from './applyJavascriptCodeColor';
 
 type CodeProps = {
   mb?: number;
+  language?: 'js';
   children: string;
 };
 
-const Code = ({ mb, children }: CodeProps) => {
+const Code = ({ mb, language, children }: CodeProps) => {
   const { fontColor, navColor } = useContext(ColorContext);
 
   const handleCopy = () => {
     copyClipboard(children);
   };
 
+  const applyColor = (codeText: string) => {
+    if (language === 'js') return applyJavascriptCodeColor(codeText);
+    return [{ color: '', text: codeText }];
+  };
+
   return (
     <Container mb={mb} fontColor={fontColor} background={navColor}>
       <code>
-        <pre>{children}</pre>
+        <pre>
+          {applyColor(children).map((item, index) => (
+            <span
+              key={index}
+              style={{ color: item.color ? item.color : undefined }}
+            >
+              {item.text}
+            </span>
+          ))}
+        </pre>
       </code>
       <IconContainer
         onClick={handleCopy}
