@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CopyIcon from './copy.svg';
 import copyClipboard from './copyClipboard';
 import { useContext } from 'react';
 import ColorContext from '../../context/colorContext';
@@ -42,7 +42,7 @@ const Code = ({ mb, language, children }: CodeProps) => {
         fontColor={fontColor}
         background={navColor}
       >
-        <ContentCopyIcon fontSize="small" />
+        <CopyIcon />
       </IconContainer>
     </Container>
   );
