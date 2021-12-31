@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import CopyIcon from './copy.svg';
+import CopyIcon from './CopyIcon';
 import copyClipboard from './copyClipboard';
 import { useContext } from 'react';
 import ColorContext from '../../context/colorContext';
@@ -82,8 +82,8 @@ const IconContainer = styled.div<{ fontColor: string; background: string }>`
   height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 15px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 0) 0%,
@@ -98,7 +98,7 @@ const IconContainer = styled.div<{ fontColor: string; background: string }>`
   }
 
   svg {
-    color: ${(props) => props.fontColor};
+    fill: ${(props) => props.fontColor};
   }
 
   transition: transform 0.2s;
