@@ -25,9 +25,10 @@ const BulletText = ({ indent = 0, mb, children }: BulletTextProps) => {
 };
 
 const Container = styled.div<{ fontColor: string; mb?: number }>`
+  margin-top: 10px;
+  margin-bottom: ${(props) => (props.mb ? props.mb + 'px' : '10px')};
   display: flex;
   color: ${(props) => props.fontColor};
-  margin-bottom: ${(props) => (props.mb ? props.mb + 'px' : undefined)};
 `;
 
 const DotArea = styled.div<{ marginLeft: number }>`

@@ -17,7 +17,7 @@ const MomentPage = () => {
       <Nav />
 
       <Main>
-        <TitleHeader title="Moment" url="https://momentjs.com/" />
+        <TitleHeader title="Moment 사용법" url="https://momentjs.com/" />
 
         <SubTitle>사용 목적 🎯</SubTitle>
 
@@ -65,7 +65,7 @@ date.format('YYYY년 MMMM Do a h시 mm분 ss초'); // 아래 문자를 return
 // 2021년 12월 25일 오전 10시 20분 30초`}
         </Code>
 
-        <Text mb={10}>많이 사용하는 출력 예제들을 적어보겠습니다.</Text>
+        <Text>많이 사용하는 출력 예제들을 적어보겠습니다.</Text>
 
         <BulletText>날짜</BulletText>
         <Code language="js">{`moment('2021-12-25').format('YYYY년 MMMM Do');`}</Code>
@@ -86,6 +86,43 @@ date.format('YYYY년 MMMM Do a h시 mm분 ss초'); // 아래 문자를 return
         <BulletText>24시간제</BulletText>
         <Code language="js">{`moment('2021-12-25 20:20:30').format('HH시 mm분');`}</Code>
         <Preview>{moment('2021-12-25 20:20:30').format('HH시 mm분')}</Preview>
+
+        <SubTitle>두 시간의 차이를 구하는 방법</SubTitle>
+        <Text>
+          두 시간의 차이를 구하기 위해서는 먼저 각 시간을 Moment 객체로 만들어야
+          합니다.
+        </Text>
+
+        <Code language="js" mb={20}>{`import moment from 'moment';
+        
+const time1 = moment('2021-12-24 12:00:01'); // 24일 12시 1초
+const time2 = moment('2021-12-25 12:00:01'); // 25일 12시 1초`}</Code>
+
+        <Text>
+          그리고는 아래와 같이 duration과 diff 메소드를 써서 각 단위별로 차이
+          값을 구할 수 있습니다.
+        </Text>
+
+        <BulletText>일(day) 차이</BulletText>
+        <Code language="js">
+          {`// time2 - time1 = 25일 - 24일
+moment.duration(time2.diff(time1)).asDays(); // 1`}
+        </Code>
+
+        <BulletText>시간(hour) 차이</BulletText>
+        <Code language="js">
+          {`moment.duration(time2.diff(time1)).asHours(); // 24`}
+        </Code>
+
+        <BulletText>분(minute) 차이</BulletText>
+        <Code language="js">
+          {`moment.duration(time2.diff(time1)).asMinutes(); // 1440`}
+        </Code>
+
+        <BulletText>초(second) 차이</BulletText>
+        <Code language="js">
+          {`moment.duration(time2.diff(time1)).asSeconds(); // 86400`}
+        </Code>
       </Main>
     </Frame>
   );

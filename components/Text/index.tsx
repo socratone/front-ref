@@ -23,6 +23,8 @@ const Text = ({ mb, children }: TextProps) => {
 };
 
 const Container = styled.p`
+  margin-top: 10px;
+  margin-bottom: 10px;
   line-height: 1.5;
 `;
 

@@ -55,11 +55,10 @@ const Container = styled.article<{
 }>`
   position: relative;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: ${(props) => (props.mb ? props.mb + 'px' : '10px')};
   padding: 10px;
   background: ${(props) => props.background};
   border-radius: 5px;
-  margin-bottom: ${(props) => (props.mb ? props.mb + 'px' : undefined)};
   overflow: hidden;
 
   :hover {
