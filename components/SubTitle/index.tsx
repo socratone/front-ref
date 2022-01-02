@@ -23,7 +23,7 @@ const SubTitle = ({ mb, children }: SubTitleProps) => {
 };
 
 const Container = styled.h2`
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 10px;
   font-size: 20px;
 `;
