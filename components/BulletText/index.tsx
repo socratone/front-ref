@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import ColorContext from '../../context/colorContext';
-import CircleIcon from './circle.svg';
+import CircleIcon from './CircleIcon';
 
 type BulletTextProps = {
   indent?: number;
