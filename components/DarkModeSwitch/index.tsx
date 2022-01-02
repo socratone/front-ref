@@ -20,15 +20,15 @@ const DarkModeSwitch = ({ checked, onChange }: DarkModeSwitchProps) => {
       checked={checked}
       onChange={onChange}
       disableRipple
-      trackColor={darkMode ? '#5c5c5c' : '#cbd2da'}
-      thumbColor={darkMode ? '#003892' : '#001e3c'}
+      $trackColor={darkMode ? '#5c5c5c' : '#cbd2da'}
+      $thumbColor={darkMode ? '#003892' : '#001e3c'}
     />
   );
 };
 
 const MaterialUISwitch = styled(Switch)<
-  SwitchProps & { trackColor: string; thumbColor: string }
->(({ trackColor, thumbColor }) => ({
+  SwitchProps & { $trackColor: string; $thumbColor: string }
+>(({ $trackColor, $thumbColor }) => ({
   width: 48,
   height: 34,
   padding: '7px 0',
@@ -45,12 +45,12 @@ const MaterialUISwitch = styled(Switch)<
       },
       '& + .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: trackColor,
+        backgroundColor: $trackColor,
       },
     },
   },
   '& .MuiSwitch-thumb': {
-    backgroundColor: thumbColor,
+    backgroundColor: $thumbColor,
     width: 32,
     height: 32,
     '&:before': {
@@ -69,7 +69,7 @@ const MaterialUISwitch = styled(Switch)<
   },
   '& .MuiSwitch-track': {
     opacity: 1,
-    backgroundColor: trackColor,
+    backgroundColor: $trackColor,
     borderRadius: 20 / 2,
   },
 }));
