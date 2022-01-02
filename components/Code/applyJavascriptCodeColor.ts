@@ -6,37 +6,30 @@ type WordColor = {
   [word: string]: string;
 };
 
-const sixLetterReservedWord: Word = {
-  import: true,
-  return: true,
-};
-
-const fiveLetterReservedWord: Word = {
-  const: true,
-  while: true,
-  class: true,
-};
-
-const fourLetterReservedWord: Word = {};
-
-const threeLetterReservedWord: Word = {
-  let: true,
-  for: true,
-};
-
-const twoLetterReservedWord: Word = {
-  if: true,
-};
-
 const wordColor: WordColor = {
   import: 'purple',
   return: 'purple',
   const: 'darkblue',
   while: 'purple',
   class: 'darkblue',
+  from: 'purple',
   let: 'darkblue',
   for: 'darkblue',
+  if: 'purple',
 };
+
+let sixLetterReservedWord: Word = {};
+let fiveLetterReservedWord: Word = {};
+let fourLetterReservedWord: Word = {};
+let threeLetterReservedWord: Word = {};
+let twoLetterReservedWord: Word = {};
+
+for (let word in wordColor) {
+  if (word.length === 6) sixLetterReservedWord[word] = true;
+  else if (word.length === 5) fiveLetterReservedWord[word] = true;
+  else if (word.length === 4) fourLetterReservedWord[word] = true;
+  else if (word.length === 3) threeLetterReservedWord[word] = true;
+}
 
 const getReservedWord = (queue: string) => {
   if (queue.length >= 6) {
